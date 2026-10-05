@@ -143,12 +143,19 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Sub-Footer Bar */}
-      <div className="border-t border-slate-900 bg-black/40 text-slate-500 text-xs py-5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-center sm:text-left">
+      <div className="border-t border-slate-900 bg-black/60 text-slate-400 text-xs py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-center sm:text-left text-slate-500">
             © {new Date().getFullYear()} {INSTITUTION.name}. All Rights Reserved. Managed by {INSTITUTION.trustName}.
           </p>
-          <div className="flex items-center gap-4 text-slate-400">
+
+          {/* Developer Credit */}
+          <div className="flex items-center gap-2 bg-slate-900/80 px-3 py-1 rounded-full border border-slate-800 text-slate-300">
+            <span className="text-[11px] text-slate-400">Developed by</span>
+            <span className="font-semibold text-amber-400 text-[11px] tracking-wide">Omkar Kalshetti</span>
+          </div>
+
+          <div className="flex items-center gap-4 text-slate-400 text-xs">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy & Media Policy</Link>
             <span>·</span>
             <Link to="/contact" className="hover:text-white transition-colors">Campus Map</Link>
