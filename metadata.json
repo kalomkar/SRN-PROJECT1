@@ -1,0 +1,8 @@
+{
+  "name": "SRN Mehta Modern Institutional Website",
+  "description": "Premier educational institution in Kalaburagi, Karnataka offering CBSE, State Board, PU College (IIT-JEE/NEET), and Degree College programs under Shri S.R.J Naval Trust.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
