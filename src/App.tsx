@@ -21,6 +21,9 @@ import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
+import { ScrollProgress } from './components/motion/ScrollProgress';
+import { PageTransition } from './components/motion/PageTransition';
+
 // Scroll Restoration Component
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,6 +49,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ScrollProgress />
       <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-900 selection:text-white">
         {/* Top Operational Announcement & Hotline Bar */}
         <TopBar onOpenAdmissionModal={() => handleOpenAdmissionModal()} />
@@ -53,33 +57,35 @@ export default function App() {
         {/* Primary Sticky Header Navigation */}
         <Navbar onOpenAdmissionModal={() => handleOpenAdmissionModal()} />
 
-        {/* Main Routed Page Content */}
+        {/* Main Routed Page Content with Smooth Transition */}
         <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage onOpenAdmissionModal={() => handleOpenAdmissionModal()} />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/academics" element={<AcademicsPage onOpenAdmissionModal={() => handleOpenAdmissionModal()} />} />
-            <Route path="/academics/:wingId" element={<AcademicsPage onOpenAdmissionModal={() => handleOpenAdmissionModal()} />} />
-            <Route path="/departments/:deptId" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/computer-applications" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/bca" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/commerce" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/bcom" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/english" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/mathematics" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/kannada" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/hindi" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
-            <Route path="/facilities" element={<FacilitiesPage />} />
-            <Route path="/faculty" element={<FacultyPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/events/:slug" element={<EventDetailPage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/news/:slug" element={<NewsDetailPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/privacy" element={<PrivacyPolicyPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+          <PageTransition>
+            <Routes>
+              <Route path="/" element={<HomePage onOpenAdmissionModal={() => handleOpenAdmissionModal()} />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/academics" element={<AcademicsPage onOpenAdmissionModal={() => handleOpenAdmissionModal()} />} />
+              <Route path="/academics/:wingId" element={<AcademicsPage onOpenAdmissionModal={() => handleOpenAdmissionModal()} />} />
+              <Route path="/departments/:deptId" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/computer-applications" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/bca" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/commerce" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/bcom" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/english" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/mathematics" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/kannada" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/hindi" element={<DepartmentDetailPage onOpenAdmissionModal={handleOpenAdmissionModal} />} />
+              <Route path="/facilities" element={<FacilitiesPage />} />
+              <Route path="/faculty" element={<FacultyPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/events/:slug" element={<EventDetailPage />} />
+              <Route path="/news" element={<NewsPage />} />
+              <Route path="/news/:slug" element={<NewsDetailPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </PageTransition>
         </main>
 
         {/* Institutional Global Footer */}

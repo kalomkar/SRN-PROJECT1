@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, GraduationCap, ChevronRight, ChevronDown, Laptop, BookOpen } from 'lucide-react';
+import { Menu, X, Phone, GraduationCap, ChevronRight, ChevronDown } from 'lucide-react';
 import { MAIN_NAV_LINKS } from '../../data/navigation';
 import { INSTITUTION } from '../../data/institution';
 
@@ -17,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
   // Scroll listener for sticky elevation
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -43,35 +43,35 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b ${
+      className={`sticky top-0 z-40 w-full transition-all duration-200 bg-white/95 backdrop-blur-md border-b ${
         isScrolled ? 'border-slate-200 shadow-sm py-2.5' : 'border-slate-100 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
-          {/* Zone 1: Single Brand Entity Lockup (No subtitle tags in DOM) */}
+        <div className="flex items-center justify-between gap-6">
+          {/* Zone 1: Single Brand Wordmark Entity */}
           <Link
             to="/"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-lg p-1"
-            aria-label="SRN Mehta Institutions Home"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded p-1 shrink-0"
+            aria-label="S.R.N. Mehta Institutions Home"
           >
             <img
               src="https://srnmehtaschool.com/wp-content/uploads/2024/02/logo.png"
               alt="SRN Mehta Emblem"
-              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-11 w-auto object-contain"
             />
             <div className="flex flex-col">
-              <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-slate-900 leading-none group-hover:text-blue-900 transition-colors">
+              <span className="font-display font-bold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
                 S.R.N. MEHTA
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium tracking-widest text-slate-500 uppercase mt-0.5">
+              <span className="text-[10px] font-medium tracking-wider text-slate-500 uppercase mt-0.5">
                 Institutions · Kalaburagi
               </span>
             </div>
           </Link>
 
-          {/* Zone 2: Clean Typography Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-6" aria-label="Primary Navigation">
+          {/* Zone 2: 4-6 Clean Text Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-7" aria-label="Primary Navigation">
             {MAIN_NAV_LINKS.map((link) => {
               if (link.children && link.children.length > 0) {
                 return (
@@ -84,27 +84,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        `text-xs font-semibold uppercase tracking-wider transition-colors flex items-center gap-1 ${
+                        `text-xs font-semibold uppercase tracking-wider transition-colors flex items-center gap-1 py-1 ${
                           isActive || location.pathname.startsWith('/departments')
-                            ? 'text-blue-900 font-bold'
+                            ? 'text-blue-950 font-bold border-b-2 border-blue-950 pb-0.5'
                             : 'text-slate-600 hover:text-slate-900'
                         }`
                       }
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+                      <ChevronDown className="w-3 h-3 text-slate-400 transition-transform group-hover:rotate-180" />
                     </NavLink>
 
-                    {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                      <div className="bg-white rounded-xl shadow-xl border border-slate-200 p-2 space-y-1">
+                    {/* Clean Minimal Dropdown */}
+                    <div className="absolute top-full left-0 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                      <div className="bg-white rounded-lg shadow-lg border border-slate-200 p-2 space-y-0.5">
                         {link.children.map((child) => (
                           <Link
                             key={child.path}
                             to={child.path}
-                            className="block p-2.5 rounded-lg hover:bg-slate-50 transition-colors group/item"
+                            className="block px-3 py-2 rounded-md hover:bg-slate-50 transition-colors group/item"
                           >
-                            <div className="text-xs font-semibold text-slate-900 group-hover/item:text-blue-900">
+                            <div className="text-xs font-semibold text-slate-900 group-hover/item:text-blue-950">
                               {child.label}
                             </div>
                             {child.description && (
@@ -125,9 +125,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `text-xs font-semibold uppercase tracking-wider transition-colors relative py-1 ${
+                    `text-xs font-semibold uppercase tracking-wider transition-colors py-1 ${
                       isActive
-                        ? 'text-blue-900 font-bold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-blue-900'
+                        ? 'text-blue-950 font-bold border-b-2 border-blue-950 pb-0.5'
                         : 'text-slate-600 hover:text-slate-900'
                     }`
                   }
@@ -138,17 +138,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
             })}
           </nav>
 
-          {/* Zone 3: Primary Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* Zone 3: Primary Action & Mobile Trigger */}
+          <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={onOpenAdmissionModal}
-              className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-blue-900 hover:bg-blue-800 active:bg-blue-950 rounded-md transition-colors shadow-sm flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+              className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-blue-950 hover:bg-blue-900 active:bg-slate-950 rounded-md transition-colors shadow-sm whitespace-nowrap cursor-pointer flex items-center gap-1.5"
             >
               <GraduationCap className="w-4 h-4 text-amber-400" />
               <span>Admissions 2026</span>
             </button>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Menu Button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -162,13 +162,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer (Accessible overlay with body lock) */}
+      {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[90px] z-50 bg-slate-900/60 backdrop-blur-sm xl:hidden transition-opacity">
-          <div className="bg-white border-b border-slate-200 shadow-xl max-h-[calc(100vh-90px)] overflow-y-auto p-6 space-y-6">
+        <div className="fixed inset-0 top-[88px] z-50 bg-slate-900/50 backdrop-blur-xs xl:hidden transition-opacity">
+          <div className="bg-white border-b border-slate-200 shadow-xl max-h-[calc(100vh-88px)] overflow-y-auto p-6 space-y-6">
             <div className="space-y-1">
               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block px-3 mb-2">
-                Main Navigation
+                Campus Navigation
               </span>
               {MAIN_NAV_LINKS.map((link) => (
                 <div key={link.path}>
@@ -176,9 +176,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
                     to={link.path}
                     onClick={() => setMobileMenuOpen(false)}
                     className={({ isActive }) =>
-                      `flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
+                      `flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-semibold transition-colors ${
                         isActive || (link.children && location.pathname.startsWith('/departments'))
-                          ? 'bg-blue-50 text-blue-900 font-bold'
+                          ? 'bg-slate-100 text-blue-950 font-bold'
                           : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
                       }`
                     }
@@ -187,15 +187,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
                     <ChevronRight className="w-4 h-4 text-slate-400" />
                   </NavLink>
 
-                  {/* Sub-departments if any */}
                   {link.children && (
-                    <div className="pl-4 pr-2 py-1 space-y-1 bg-slate-50 rounded-lg my-1">
+                    <div className="pl-4 pr-2 py-1 space-y-1 bg-slate-50 rounded-md my-1">
                       {link.children.map((child) => (
                         <Link
                           key={child.path}
                           to={child.path}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block px-3 py-2 text-xs font-medium text-slate-600 hover:text-blue-900 hover:bg-white rounded"
+                          className="block px-3 py-2 text-xs font-medium text-slate-600 hover:text-blue-950 hover:bg-white rounded"
                         >
                           {child.label}
                         </Link>
@@ -212,7 +211,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
                   setMobileMenuOpen(false);
                   onOpenAdmissionModal();
                 }}
-                className="w-full py-3 bg-blue-900 hover:bg-blue-800 text-white font-semibold rounded-lg text-sm flex items-center justify-center gap-2 cursor-pointer shadow"
+                className="w-full py-3 bg-blue-950 hover:bg-blue-900 text-white font-semibold rounded-md text-sm flex items-center justify-center gap-2 cursor-pointer"
               >
                 <GraduationCap className="w-4 h-4 text-amber-400" />
                 <span>Apply for Admission 2026-27</span>
@@ -220,10 +219,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmissionModal }) => {
 
               <a
                 href={`tel:${INSTITUTION.contact.phone.replace(/\s+/g, '')}`}
-                className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium rounded-lg text-sm flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium rounded-md text-sm flex items-center justify-center gap-2 transition-colors"
               >
                 <Phone className="w-4 h-4 text-slate-600" />
-                <span>Call Admissions: {INSTITUTION.contact.phone}</span>
+                <span>Call Desk: {INSTITUTION.contact.phone}</span>
               </a>
             </div>
           </div>
