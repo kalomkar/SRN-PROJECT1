@@ -3,6 +3,8 @@ import { X, CheckCircle, GraduationCap, Phone, User, Mail, BookOpen, Send } from
 import { AdmissionInquiry } from '../../types/institution';
 import { INSTITUTION } from '../../data/institution';
 
+import { jsonDatabase } from '../../services/jsonDatabase';
+
 interface AdmissionModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -32,10 +34,22 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Save directly to the JSON database
+    jsonDatabase.addInquiry({
+      studentName: formData.studentName,
+      parentName: formData.parentName,
+      email: formData.email,
+      phone: formData.phone,
+      targetWing: formData.targetWing,
+      currentGrade: formData.currentGrade,
+      city: formData.city,
+      message: formData.message
+    });
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    }, 400);
   };
 
   const handleReset = () => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Building2, User } from 'lucide-react';
 import { INSTITUTION } from '../data/institution';
+import { jsonDatabase } from '../services/jsonDatabase';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -18,10 +19,19 @@ export const ContactPage: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Save directly to the JSON database
+    jsonDatabase.addContactMessage({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message
+    });
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    }, 400);
   };
 
   return (

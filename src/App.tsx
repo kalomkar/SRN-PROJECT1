@@ -19,6 +19,7 @@ import { NewsDetailPage } from './pages/NewsDetailPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { AdminDatabasePage } from './pages/AdminDatabasePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 import { ScrollProgress } from './components/motion/ScrollProgress';
@@ -83,6 +84,8 @@ export default function App() {
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/admin" element={<AdminDatabasePage />} />
+              <Route path="/admin/database" element={<AdminDatabasePage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </PageTransition>

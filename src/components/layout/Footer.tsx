@@ -153,18 +153,30 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} {INSTITUTION.name}. All Rights Reserved. Managed by {INSTITUTION.trustName}.
           </p>
 
-          {/* Developer Credit */}
-          <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-1 rounded border border-slate-800 text-slate-300">
+          {/* Developer Credit Link */}
+          <a
+            href="https://kalomkar.github.io/om-portfolivo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-slate-900/90 px-3.5 py-1.5 rounded border border-slate-800 text-slate-300 hover:border-amber-500/60 hover:text-white transition-all group"
+            title="Visit Developer Portfolio"
+          >
             <span className="text-[11px] text-slate-400">Developed by</span>
-            <span className="font-semibold text-amber-400 text-[11px] tracking-wide">Omkar Kalshetti</span>
-          </div>
+            <span className="font-semibold text-amber-400 group-hover:text-amber-300 text-[11px] tracking-wide underline decoration-amber-500/40 underline-offset-2">
+              Omkar Kalshetti
+            </span>
+          </a>
 
-          <div className="flex items-center gap-4 text-slate-400 text-xs">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy & Media Policy</Link>
+          <div className="flex items-center gap-3 text-slate-400 text-xs">
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>·</span>
-            <Link to="/contact" className="hover:text-white transition-colors">Campus Map</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
             <span>·</span>
             <Link to="/news" className="hover:text-white transition-colors">Circulars</Link>
+            <span>·</span>
+            <Link to="/admin" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors flex items-center gap-1">
+              <span>Admin DB</span>
+            </Link>
           </div>
         </div>
       </div>

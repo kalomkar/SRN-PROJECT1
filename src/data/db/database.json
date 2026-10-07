@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-07T09:30:00.000Z",
+  "institution": {
+    "name": "S.R.N. Mehta Institutions",
+    "shortName": "SRN Mehta",
+    "tagline": "Empowering Minds, Serving the Nation with Academic Excellence",
+    "motto": "Teach Them, They Serve The Nation",
+    "trustName": "Shri S.R.J. Naval Trust",
+    "establishedYear": 1991,
+    "cbseAffiliationNo": "830349",
+    "schoolCode": "45308",
+    "location": {
+      "city": "Kalaburagi (Gulbarga)",
+      "state": "Karnataka",
+      "pincode": "585105",
+      "country": "India",
+      "address": "Near Sedam Ring Road Cross, Old Jewargi Road, Kalaburagi",
+      "landmark": "Behind High Court Bench, Ring Road"
+    },
+    "contact": {
+      "phone": "+91 8472 255555",
+      "alternatePhone": "+91 94481 23456",
+      "email": "srnmehtacollegekalburgi@gmail.com",
+      "officeHours": "Monday to Saturday: 8:30 AM – 4:30 PM",
+      "admissionsHelpline": "+91 8472 277777 / 94481 23456"
+    },
+    "accreditations": [
+      {
+        "title": "Ranked #1 in India for Community Services",
+        "authority": "EducationToday CBSE Category National Survey",
+        "year": "2023-24"
+      },
+      {
+        "title": "ET TECH X School Excellence Award",
+        "authority": "ET TECH X National Educational Summit",
+        "year": "2023-24"
+      },
+      {
+        "title": "CBSE Board Examination Distinction",
+        "authority": "Central Board of Secondary Education, New Delhi",
+        "year": "2024"
+      }
+    ]
+  },
+  "academic_wings": [
+    {
+      "id": "cbse-wing",
+      "title": "S.R.N. Mehta CBSE Public School",
+      "code": "CBSE",
+      "subtitle": "Pre-KG to Class X · Co-Educational",
+      "affiliation": "Central Board of Secondary Education (Affiliation No: 830349)",
+      "gradeSpan": "Pre-KG to Class 10",
+      "programsOffered": [
+        { "name": "Foundational Stage (Pre-KG, LKG, UKG)", "focus": "Play-way Montessori learning, phonetic development, motor skills", "duration": "3 Years" },
+        { "name": "Primary School (Class 1 to 5)", "focus": "NCERT conceptual foundation, bilingual numeracy, digital literacy", "duration": "5 Years" },
+        { "name": "Middle & Secondary School (Class 6 to 10)", "focus": "STEM lab experimentation, NCERT board preparation, AI fundamentals", "duration": "5 Years" }
+      ]
+    },
+    {
+      "id": "state-wing",
+      "title": "S.R.N. Mehta Karnataka State Board School",
+      "code": "STATE",
+      "subtitle": "Grade 1 to 10 (SSLC) · English & Regional Medium",
+      "affiliation": "Karnataka School Examination and Assessment Board (KSEAB)",
+      "gradeSpan": "Grade 1 to Class 10 (SSLC)",
+      "programsOffered": [
+        { "name": "Primary State Syllabus (Grade 1 to 7)", "focus": "State curriculum mastery, Kannada & English fluency", "duration": "7 Years" },
+        { "name": "High School SSLC (Grade 8 to 10)", "focus": "100% board examination distinction track with state rank mentors", "duration": "3 Years" }
+      ]
+    },
+    {
+      "id": "pu-college",
+      "title": "S.R.N. Mehta Composite Pre-University College",
+      "code": "PUC",
+      "subtitle": "Science (PCMB/PCMC) & Commerce (EBAC/SEBA)",
+      "affiliation": "Department of Pre-University Education, Karnataka",
+      "gradeSpan": "1st PUC & 2nd PUC (11th & 12th)",
+      "programsOffered": [
+        { "name": "PU Science (PCMB / PCMC) + NEET/IIT-JEE", "focus": "Rigorous NCERT + NTA computerized mock testing hub", "duration": "2 Years" },
+        { "name": "PU Commerce (EBAC / SEBA) + CA Foundation", "focus": "Accountancy, Business Studies, Statistics & CA CPT coaching", "duration": "2 Years" }
+      ]
+    },
+    {
+      "id": "degree-college",
+      "title": "S.R.N. Mehta Degree College",
+      "code": "DEGREE",
+      "subtitle": "BCA & B.Com · NEP 2020 Multi-Disciplinary",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "gradeSpan": "Undergraduate Degree Programs",
+      "programsOffered": [
+        { "name": "Bachelor of Computer Applications (BCA)", "focus": "Full-Stack Development, Cloud Computing, AI, Database Systems", "duration": "3 / 4 Years (NEP)" },
+        { "name": "Bachelor of Commerce (B.Com)", "focus": "Corporate Accounting, Financial Analytics, Taxation, Banking", "duration": "3 / 4 Years (NEP)" }
+      ]
+    }
+  ],
+  "departments": [
+    {
+      "id": "computer-applications",
+      "name": "Department of Computer Applications (BCA)",
+      "shortName": "BCA",
+      "degreeName": "Bachelor of Computer Applications (BCA)",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "badge": "Undergraduate Program",
+      "duration": "3 Years / 6 Semesters",
+      "facultyCount": 3,
+      "facultyList": [
+        { "slNo": 1, "name": "Mr. Virupaksha M. Shastri", "designation": "Professor & HOD", "qualification": "MCA" },
+        { "slNo": 2, "name": "Smt. Ambika Ganapur", "designation": "Assistant Professor", "qualification": "MCA" },
+        { "slNo": 3, "name": "Mr. Sourabh Kulkarni", "designation": "Assistant Professor", "qualification": "MCA" }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "Department of English",
+      "shortName": "English",
+      "degreeName": "Department of English Language & Literature",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "badge": "Language Department",
+      "duration": "UG Foundation & Elective",
+      "facultyCount": 1,
+      "facultyList": [
+        { "slNo": 1, "name": "Prabha G. Hugar", "designation": "Assistant Professor", "qualification": "M.A, B.Ed" }
+      ]
+    },
+    {
+      "id": "hindi",
+      "name": "Department of Hindi",
+      "shortName": "Hindi",
+      "degreeName": "Department of Hindi Language & Literature",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "badge": "National Language Department",
+      "duration": "UG Foundation & Elective",
+      "facultyCount": 1,
+      "facultyList": [
+        { "slNo": 1, "name": "Dr. Vaishali Mahajan", "designation": "Assistant Professor", "qualification": "M.A, M.Phil, Ph.D" }
+      ]
+    },
+    {
+      "id": "kannada",
+      "name": "Department of Kannada",
+      "shortName": "Kannada",
+      "degreeName": "Department of Kannada Language & Literature",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "badge": "State Language Department",
+      "duration": "UG Foundation & Elective",
+      "facultyCount": 1,
+      "facultyList": [
+        { "slNo": 1, "name": "Smt. Tulasi Kumari", "designation": "Assistant Professor", "qualification": "M.A, M.Ed, M.Phil" }
+      ]
+    },
+    {
+      "id": "mathematics",
+      "name": "Department of Mathematics",
+      "shortName": "Mathematics",
+      "degreeName": "Department of Mathematics & Quantitative Studies",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "badge": "Quantitative Department",
+      "duration": "Core Analytical Component",
+      "facultyCount": 1,
+      "facultyList": [
+        { "slNo": 1, "name": "Mr. Nikhil Nandikol", "designation": "Assistant Professor", "qualification": "M.Sc, B.Ed" }
+      ]
+    },
+    {
+      "id": "commerce",
+      "name": "Department of Commerce (B.Com)",
+      "shortName": "B.Com",
+      "degreeName": "Bachelor of Commerce (B.Com)",
+      "affiliation": "Affiliated to Gulbarga University, Kalaburagi",
+      "badge": "Undergraduate Program",
+      "duration": "3 Years / 6 Semesters",
+      "facultyCount": 2,
+      "facultyList": [
+        { "slNo": 1, "name": "Prof. S. R. Kulkarni", "designation": "Associate Professor & HOD", "qualification": "M.Com, M.Phil" },
+        { "slNo": 2, "name": "Smt. Radhika Patil", "designation": "Assistant Professor", "qualification": "M.Com, NET" }
+      ]
+    }
+  ],
+  "admissions_inquiries": [
+    {
+      "id": "INQ-2026-001",
+      "studentName": "Anand Patil",
+      "parentName": "Suresh Patil",
+      "email": "suresh.patil@example.com",
+      "phone": "9845012345",
+      "targetWing": "Degree College",
+      "currentGrade": "12th Science (Passed)",
+      "city": "Kalaburagi",
+      "message": "Inquiring for Bachelor of Computer Applications (BCA) admission syllabus and lab facilities.",
+      "status": "New",
+      "createdAt": "2026-10-06T14:32:00.000Z"
+    },
+    {
+      "id": "INQ-2026-002",
+      "studentName": "Priyanka Sharma",
+      "parentName": "Ramesh Sharma",
+      "email": "ramesh.sharma@example.com",
+      "phone": "9448198765",
+      "targetWing": "PU College Science",
+      "currentGrade": "Class 10 (CBSE)",
+      "city": "Kalaburagi",
+      "message": "Interested in PCMB + NEET integrated coaching track and hostel facilities.",
+      "status": "Contacted",
+      "createdAt": "2026-10-06T11:15:00.000Z"
+    },
+    {
+      "id": "INQ-2026-003",
+      "studentName": "Kavya Deshmukh",
+      "parentName": "Vijay Deshmukh",
+      "email": "vijay.d@example.com",
+      "phone": "9741234567",
+      "targetWing": "CBSE School",
+      "currentGrade": "Class 5",
+      "city": "Kalaburagi",
+      "message": "Seeking admission for Class 6 CBSE with bus transportation from Sedam Road.",
+      "status": "New",
+      "createdAt": "2026-10-07T08:20:00.000Z"
+    }
+  ],
+  "contact_messages": [
+    {
+      "id": "MSG-2026-001",
+      "name": "Dr. Basavaraj",
+      "email": "basavaraj.k@gmail.com",
+      "phone": "9880011223",
+      "subject": "Hostel & Transport Facility",
+      "message": "Kindly provide details regarding outstation student hostel accommodation and food arrangements.",
+      "status": "Responded",
+      "createdAt": "2026-10-06T09:45:00.000Z"
+    }
+  ]
+}

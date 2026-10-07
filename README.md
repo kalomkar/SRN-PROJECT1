@@ -21,6 +21,20 @@
 
 ---
 
+## 🗄️ JSON Database & Admin Portal
+
+The portal is powered by a central **JSON Database Engine** (`src/data/db/database.json` & `src/services/jsonDatabase.ts`):
+- **Collections**: `institution`, `academic_wings`, `departments`, `faculty`, `facilities`, `events`, `news_circulars`, `admissions_inquiries`, `contact_messages`.
+- **Live LocalDB Persistence**: Automatically records admissions and contact submissions into browser storage with instant UI sync.
+- **Admin Portal (`/admin`)**:
+  - Live table of admission applications with status tracking (`New` / `Contacted` / `Enrolled`).
+  - Contact desk message inbox.
+  - **1-Click 📥 Export database.json** for backup.
+  - **1-Click 📊 Export Inquiries as CSV** for Excel & Office use.
+  - Live syntax-highlighted Raw JSON Inspector with 1-click clipboard copy.
+
+---
+
 ## ✨ Motion & Design System Hierarchy
 
 - **Level 1 (Global)**: Tactile button micro-interactions (`active:scale-[0.98]`), link hover underlines, lightweight route page transitions (`PageTransition`), reading scroll progress bar (`ScrollProgress`).
@@ -93,4 +107,4 @@ npm run preview
 ---
 
 ## 👨‍💻 Developer Credit
-**Developed by Omkar Kalshetti** (integrated into the official footer across all pages).
+**Developed by [Omkar Kalshetti](https://kalomkar.github.io/om-portfolivo/)** (integrated into the official footer across all pages).
